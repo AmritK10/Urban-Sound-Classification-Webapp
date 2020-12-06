@@ -38,9 +38,9 @@ router.post("/images",middleware.isLoggedIn,upload.single("photo"),function(req,
           }
           else{
             //docker
-            let url = "http://api:5000/api"; 
+            // let url = "http://api:5000/api"; 
             //local
-            // let url = "http://localhost:5000/api"; 
+            let url = "http://localhost:5000/api"; 
             var fileName = targetPath;
             const formData = {
               file: {

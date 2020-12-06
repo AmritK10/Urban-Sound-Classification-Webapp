@@ -19,9 +19,9 @@ app.use(methodOverride("_method"));
 app.set("view engine","ejs");
 
 //docker
-var url =process.env.DATABASEURL || "mongodb://mongo:27017/imgs";
+// var url =process.env.DATABASEURL || "mongodb://mongo:27017/imgs";
 // local
-// var url =process.env.DATABASEURL || "mongodb://localhost:27017/imgs";
+var url =process.env.DATABASEURL || "mongodb://localhost:27017/imgs";
 
 
 mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology: true,});
