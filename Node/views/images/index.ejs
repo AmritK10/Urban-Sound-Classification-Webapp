@@ -1,8 +1,33 @@
 <% include ../partials/header %>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Major+Mono+Display&display=swap" rel="stylesheet">
+  <style>
+    .jumbotron{
+      background-color: #0f53a6;
+      color: #22c6fd;
+      font-family: 'Major Mono Display', monospace;
+      text-align: center;
+      padding-bottom: 10px;
+      border-radius: 0 !important;
+    }
+
+    .upload-btn{
+      background-color: #22c6fd;
+      color: #0f53a6;
+      border: none;
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .title{
+      font-size: 5rem;
+    }
+  </style>
+</head>
     <div class="jumbotron">
-      <h1 style="text-align: center;">Sample Generated Captions</h1>
+      <h1 style="text-align: center;" class="title">MY SOUNDS</h1>
       <p>
-        <a href="/images/new" class="btn btn-lg btn-success">Upload form</a>
+        <a href="/images/new" class="btn btn-lg btn-success upload-btn">Upload</a>
       </p>
     </div>
     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
@@ -16,7 +41,8 @@
               </audio>
               <!-- <img class="img-fluid img-thumbnail rounded mx-auto d-block" alt="Responsive image" src="<%=image.img_path %>"> -->
               <div class="caption">
-                  <h4><strong>Caption: </strong><%=image.img_caption%></h4>
+                  <h4><%=image.img_caption%></h4>
+                  <img src="./maps/<%=image.img_caption%>.png" alt="<%=image.img_caption%>">
               </div>
               <p>
                 <a href="/images/<%=image._id%>" class="btn btn-sm btn-success">Show Details</a>

@@ -3,9 +3,13 @@
 <head>
 	<title>Image Captioner</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Major+Mono+Display&display=swap" rel="stylesheet">
 	<style>
 		body{
-			background: url("https://images.unsplash.com/photo-1461958508236-9a742665a0d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80");
+			/* background: url("https://images.unsplash.com/photo-1461958508236-9a742665a0d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"); */
+			background-image: url("https://www.rd.com/wp-content/uploads/2018/01/02-top-8-sleep-sounds-for-a-better-night-s-rest-1024x683.jpg");
 			background-size: cover;
 			background-position: center;
 			font-family: Lato;
@@ -22,14 +26,38 @@
 			z-index: 1; 
 			position: relative; 
 			text-align: center; 
-			padding-top: 40vh;
+			padding-bottom: 19vh;
+			padding-top: 19vh;
+		}
+
+		.home-title{
+			z-index: 1; 
+			position: relative; 
+			text-align: center; 
+			padding-top: 0vh;
+			color: white;
+			font-family: 'Major Mono Display', monospace;
+			outline-width: 0;
+			font-size: 8rem;
+		}
+
+		.btn {
+    	font-family: 'Major Mono Display', monospace;
+		color: #0f53a6;
 		}
 	</style>
 </head>
 <body >
-	<div id="landing-header">
-		<h1>Welcome to Image Caption Generator!</h1>
-		<a href="/images" class="btn btn-lg btn-success">View Sample Images</a>
+
+	<div class="home-title">
+		Urban Sound 
 	</div>
+	<div id="landing-header">
+		<a href="/images" class="btn btn-lg btn-light">My Sounds</a>
+	</div>
+	<div class="home-title">
+		Classifier
+	</div>
+	
 </body>
 </html>

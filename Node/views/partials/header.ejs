@@ -4,11 +4,19 @@
 	<title>Image Captioner</title>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Major+Mono+Display&display=swap">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <style>
+        .navbar-brand{
+            font-family: 'Major Mono Display', monospace;
+        }
+    </style>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 0 1rem">
-    <a class="navbar-brand" href="/">Image Captioner</a>
+    <a class="navbar-brand" href="/">USC</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,7 +35,7 @@
                     <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="/register">Sign Up</a></li>
                 <%}else{%>
-                    <li class="nav-item"><a class="nav-link" href="/user/<%=currentUser._id%>">Signed In As <%=currentUser.username %></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/user/<%=currentUser._id%>">Signed in as <%=currentUser.username %></a></li>
                     <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
                 <%}%>
             </ul>

@@ -45,9 +45,9 @@ def build_model():
 new_model = build_model()
 new_model.load_weights("Model_data/sound_model_weights.h5")
 
-Class_Labels = {-1 : 'Audio file too short to make a prediction!', 0 : 'air_conditioner', 1 : 'car_horn', 
-                2 : 'children_playing', 3 : 'dog_bark', 4 : 'drilling', 5 : 'engine_idling', 6 : 'gun_shot', 
-                7 : 'jackhammer', 8 : 'siren', 9 : 'street_music'}
+Class_Labels = {-1 : 'Audio file too short to make a prediction!', 0 : 'Air Conditioner', 1 : 'Car Horn', 
+                2 : 'Children Playing', 3 : 'Dog Barking', 4 : 'Drilling', 5 : 'Engine Idling', 6 : 'Gunshot', 
+                7 : 'Jackhammer', 8 : 'Siren', 9 : 'Street Music'}
 
 def process_test_point(file_path):
   sound_clip, sr = librosa.load(file_path)
