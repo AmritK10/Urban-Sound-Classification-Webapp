@@ -5,3 +5,4 @@ Node/public/
 Flask/static/
 Flask/__pycache__/
 Flask/venv/
+.DS_Store
