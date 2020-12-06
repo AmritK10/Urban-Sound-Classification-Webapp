@@ -22,6 +22,11 @@
     .title{
       font-size: 5rem;
     }
+
+    .img-fluid{
+      height: 165px;
+      width: 290px;
+    }
   </style>
 </head>
     <div class="jumbotron">
@@ -36,7 +41,7 @@
           <div class="col-md-4 col-sm-6 ">
             <div class="thumbnail">
               <img class="img-fluid img-thumbnail rounded mx-auto d-block" alt="Responsive image" src="/images/class_photos/<%=image.img_caption.slice(1,-2)%>.jpg">
-              <audio controls>
+              <audio controls style="margin-top: 5px;">
                 <source src="<%=image.img_path %>" type="audio/wav">
                 Your browser does not support the audio element.
               </audio>
