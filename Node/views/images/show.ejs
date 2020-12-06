@@ -71,6 +71,7 @@
 						</center>
 						<h1 style="text-align: center; padding-top: 3rem; padding-bottom: 3rem;">Class: <span style="font-weight: bolder;"><%=Image.img_caption.slice(1,-2)%></span></h1>
 					</div>
+					<% if (currentUser && currentUser.id == Image.author.id) {%>
 					<form class="delete-form form-inline justify-content-center" action="/images/<%=Image._id%>?_method=DELETE" method="POST">
 						<div class="form-group" style="padding-bottom: 3rem;">
 							<input type="submit" class="btn btn-lg btn-danger" value="Delete">
@@ -85,6 +86,7 @@
 							<button class="btn btn-xs btn-primary">Submit!</button>
 						</div>
 					</form>
+					<% } %>
 				</div>
 			</div>
 		</div>
