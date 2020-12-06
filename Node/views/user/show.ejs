@@ -65,12 +65,12 @@
                     <% images.forEach(function(image){ %>
                         <% if(currentUser && image.author.id.equals(currentUser._id)){%>
                             <div class="col-sm-12">
+							<img class="img-fluid img-thumbnail rounded mx-auto d-block" alt="Responsive image" src="/images/class_photos/<%=image.img_caption.slice(1,-2)%>.jpg">
                             <div class="thumbnail">
                                 <audio controls >
                                     <source src="<%=image.img_path %>" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
-                                <!-- <img class="img-fluid img-thumbnail rounded mx-auto d-block" alt="Responsive image" src="<%=image.img_path %>"> -->
                                 <div class="caption">
                                     <h4><%=image.img_caption.slice(1,-2)%></h4>
                                 </div>
