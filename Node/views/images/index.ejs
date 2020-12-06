@@ -35,14 +35,13 @@
         <% if(image.img_public){%>
           <div class="col-md-4 col-sm-6 ">
             <div class="thumbnail">
+              <img class="img-fluid img-thumbnail rounded mx-auto d-block" alt="Responsive image" src="/images/class_photos/<%=image.img_caption.slice(1,-2)%>.jpg">
               <audio controls>
                 <source src="<%=image.img_path %>" type="audio/wav">
                 Your browser does not support the audio element.
               </audio>
-              <!-- <img class="img-fluid img-thumbnail rounded mx-auto d-block" alt="Responsive image" src="<%=image.img_path %>"> -->
               <div class="caption">
-                  <h4><%=image.img_caption%></h4>
-                  <img src="./maps/<%=image.img_caption%>.png" alt="<%=image.img_caption%>">
+                <h4><%=image.img_caption.slice(1,-2)%></h4>
               </div>
               <p>
                 <a href="/images/<%=image._id%>" class="btn btn-sm btn-success">Show Details</a>
