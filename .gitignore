@@ -1,7 +1,7 @@
 # Don't track content of these folders
 Node/node_modules/
 Mongo/data/
-Node/public/
+# Node/public/
 Flask/static/
 Flask/__pycache__/
 Flask/venv/
