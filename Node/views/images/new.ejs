@@ -1,9 +1,49 @@
 <% include ../partials/header %>
-	<div class="container ">
+
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Major+Mono+Display&display=swap" rel="stylesheet">
+	<style>
+	  .jumbotron{
+		background-color: #0f53a6;
+		color: #22c6fd;
+		font-family: 'Major Mono Display', monospace;
+		text-align: center;
+		padding-bottom: 10px;
+		border-radius: 0 !important;
+	  }
+  
+	  .upload-btn{
+		background-color: #22c6fd;
+		color: #0f53a6;
+		border: none;
+		margin-top: 4rem;
+		margin-bottom: 1rem;
+	  }
+  
+	  .title{
+		font-size: 3rem;
+		padding-top: 1rem;
+		color: #0f53a6;
+		font-family: 'Major Mono Display', monospace;
+
+
+	  }
+
+	  body{
+		  background-color: #22c6fd;
+	  }
+	</style>
+  </head>
+  <body>
+
+	<div class="title">
+		<h1 style="text-align: center;" class="title">URBAN SOUND CLASSIFIER</h1>
+	</div>
+	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<div style="width:40%; margin:25px auto; padding: 10px;" class="border border-warning">
-					<h1 style="text-align: center;">Image Captioner</h1>
+				<div style="width:40%; margin:25px auto; padding: 10px;" class="">
+					<h1 style="text-align: center;">New File</h1>
 						<form action="/images" method="post" enctype="multipart/form-data">
 							<div class="form-group">
 								<label for="img" ><strong>Upload Image:</strong> </label>
@@ -21,4 +61,6 @@
 			</div>
 		</div>
 	</div>
+	  
+  </body>
 <% include ../partials/footer %>
