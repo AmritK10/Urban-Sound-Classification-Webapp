@@ -1,12 +1,65 @@
 <% include ../partials/header %>
+
+<head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Major+Mono+Display&family=Montserrat&display=swap" rel="stylesheet">
+	<style>
+	  .jumbotron{
+		background-color: #22c6fd;
+		color: #0f53a6;
+		font-family: 'Major Mono Display', monospace;
+		text-align: center;
+		padding-bottom: 50px;
+		border-radius: 0 !important;
+	  }
+  
+	  .upload-btn{
+		background-color: #22c6fd;
+		color: #0f53a6;
+		border: none;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	  }
+  
+	  .title{
+		font-size: 3rem;
+		padding-top: 1rem;
+		color: #0f53a6;
+		font-family: 'Major Mono Display', monospace;
+
+
+	  }
+
+	  body{
+		  background-color: #0f53a6;
+		  color: white;
+	  }
+
+	  .upload-box{
+		  text-align: center;
+	  }
+
+	  .public-switch{
+		  padding-top: 2rem;
+		  padding-bottom: 2rem;
+	  }
+
+	  .new-file{
+		  font-family: 'Montserrat', sans-serif;
+		  color: white;
+	  }
+	</style>
+  </head>
+
+  <body>
 	<div class="jumbotron">
-		<h1 style="text-align: center;">Generated Caption</h1>
+		<h1 style="text-align: center;"><strong>G</strong>enerated Classification</h1>
 	</div>
 	<div class="mx-auto">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
-					<h1 style="text-align: center;">Image</h1>
+					<!-- <h1 style="text-align: center;">Image</h1> -->
 					<h6 style="text-align: right;">Posted By: <%=Image.author.username%></h6>
 					<div class="thumbnail">
 						<center>
@@ -16,10 +69,10 @@
 							</audio>
 						</center>
 						<!-- <img class="img-fluid img-thumbnail rounded mx-auto d-block" alt="Responsive image" src="<%=Image.img_path%>"> -->
-						<h1 style="text-align: center;">Caption: <span style="font-weight: bolder;"><%=Image.img_caption%></span></h1>
+						<h1 style="text-align: center; padding-top: 3rem; padding-bottom: 3rem;">Class: <span style="font-weight: bolder;"><%=Image.img_caption.slice(1,-2)%></span></h1>
 					</div>
 					<form class="delete-form form-inline justify-content-center" action="/images/<%=Image._id%>?_method=DELETE" method="POST">
-						<div class="form-group">
+						<div class="form-group" style="padding-bottom: 3rem;">
 							<input type="submit" class="btn btn-lg btn-danger" value="Delete">
 						</div>	
 					</form>
@@ -37,3 +90,5 @@
 		</div>
 	</div>
 <% include ../partials/footer %>
+  </body>
+	

@@ -1,30 +1,87 @@
 <% include ../partials/header %>
 
-<div class="jumbotron" style="padding-left: 1rem; padding-bottom: 0.5rem;">
-    <h1 style="text-align: center;">Hello <%=currentUser.username%>!</h1>
-</div>
-<div class="container" style="height: 50%;width: 50%;">
-        <h2 style="text-align: center;">Your Generated Image Captions:</h2>
-        <div class="row text-center" style="display:flex; flex-wrap: wrap;">
-                <% images.forEach(function(image){ %>
-                    <% if(currentUser && image.author.id.equals(currentUser._id)){%>
-                        <div class="col-sm-12">
-                        <div class="thumbnail">
-                            <audio controls >
-                                <source src="<%=image.img_path %>" type="audio/wav">
-                                Your browser does not support the audio element.
-                            </audio>
-                            <!-- <img class="img-fluid img-thumbnail rounded mx-auto d-block" alt="Responsive image" src="<%=image.img_path %>"> -->
-                            <div class="caption">
-                                <h4><strong>Caption: </strong><%=image.img_caption%></h4>
+<head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Major+Mono+Display&family=Montserrat&display=swap" rel="stylesheet">
+	<style>
+	  .jumbotron{
+		background-color: #22c6fd;
+		color: #0f53a6;
+		font-family: 'Major Mono Display', monospace;
+		text-align: center;
+		padding-bottom: 50px;
+		border-radius: 0 !important;
+	  }
+  
+	  .upload-btn{
+		background-color: #22c6fd;
+		color: #0f53a6;
+		border: none;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	  }
+  
+	  .title{
+		font-size: 3rem;
+		padding-top: 1rem;
+		color: #0f53a6;
+		font-family: 'Major Mono Display', monospace;
+
+
+	  }
+
+	  body{
+		  background-color: #0f53a6;
+		  color: white;
+	  }
+
+	  .upload-box{
+		  text-align: center;
+	  }
+
+	  .public-switch{
+		  padding-top: 2rem;
+		  padding-bottom: 2rem;
+	  }
+
+	  .new-file{
+		  font-family: 'Montserrat', sans-serif;
+		  color: white;
+	  }
+
+      .thumbnail{
+          padding: 2rem 0;
+      }
+	</style>
+  </head>
+
+<body>
+    <div class="jumbotron" style="padding-left: 1rem; padding-bottom: 0.5rem;">
+        <h1 style="text-align: center;">Hello <%=currentUser.username%>!</h1>
+    </div>
+    <div class="container" style="height: 50%;width: 50%;">
+            <h2 style="text-align: center;">Your Classified Sounds:</h2>
+            <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+                    <% images.forEach(function(image){ %>
+                        <% if(currentUser && image.author.id.equals(currentUser._id)){%>
+                            <div class="col-sm-12">
+                            <div class="thumbnail">
+                                <audio controls >
+                                    <source src="<%=image.img_path %>" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <!-- <img class="img-fluid img-thumbnail rounded mx-auto d-block" alt="Responsive image" src="<%=image.img_path %>"> -->
+                                <div class="caption">
+                                    <h4><%=image.img_caption.slice(1,-2)%></h4>
+                                </div>
+                                <p>
+                                <a href="/images/<%=image._id%>" class="btn btn-sm btn-success">Show Details</a>
+                                </p>
                             </div>
-                            <p>
-                            <a href="/images/<%=image._id%>" class="btn btn-sm btn-success">Show Details</a>
-                            </p>
-                        </div>
-                        </div>
-                    <%}%>
-                <%});%>	
-        </div>
-</div>
+                            </div>
+                        <%}%>
+                    <%});%>	
+            </div>
+    </div>
+</body>
 <% include ../partials/footer %>
