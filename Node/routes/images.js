@@ -31,7 +31,9 @@ router.get("/images/new",middleware.isLoggedIn,function(req,res){
 //CREATE Route
 router.post("/images",middleware.isLoggedIn,upload.single("photo"),function(req, res){
       const tempPath = req.file.path;
-      const targetPath = path.join(__dirname, "../public/images/"+req.user.username+req.file.originalname);
+      var date = new Date();
+      var timestamp = date.getTime();
+      const targetPath = path.join(__dirname, "../public/images/"+req.user.username + timestamp + req.file.originalname);
         fs.rename(tempPath, targetPath, function(err){
           if(err){
             return res.status(500).contentType("text/plain").end("Oops! Something went wrong!");
@@ -57,7 +59,7 @@ router.post("/images",middleware.isLoggedIn,upload.single("photo"),function(req,
               }
               else{
                 console.log("API Request successful!")
-                var file_path="/images/" +req.user.username + req.file.originalname;
+                var file_path="/images/" +req.user.username + timestamp + req.file.originalname;
                 var author={
                   id:req.user._id,
                   username:req.user.username
